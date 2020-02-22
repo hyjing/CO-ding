@@ -7,16 +7,53 @@ Create basic HTML flow and Cucumber stories.
 1. Determine list of features
 2. Determine page flow
 
-Additional:
+**Additional:**
 1. Explore Google Drive API
-  - Check for synchronization
-  - Google authentication
-  - Collaboration
+    1. Check for synchronization
+    2. Google authentication
+    3. Collaboration
 2. Explore potential coding platform APIs
-  - Basic layout
-  - Syntax checker and highlighter for the basic languages (let's focus on Java, Python first)
-  - Create Dev env where you can load libraries (Does import numpy work?)
-  - Functionality to run the code.
+    1. Basic layout
+    2. Syntax checker and highlighter for the basic languages (let's focus on Java, Python first)
+    3. Create Dev env where you can load libraries (Does import numpy work?)
+    4. Functionality to run the code.
+
+
+## Meeting Notes
+### What we want
+1. Auto-sync to Google Drive – **Google API**
+2. Basically "Google Docs for code" - **Google API**
+3. Editor – **Coding/Other API**
+    1. Highlight
+    2. Auto Complete
+    3. Syntax Check
+4. Running Code (focus on Java first) **Coding/Other API**
+    1. Compiler
+    2. Development environment
+    3. Terminal
+### Starting Point
+Get Java syntax highlight wile multiple people type
+#### To Get There
+1. Login 2 users
+2. Create development environmet (Create new file/project)
+3. Have functional editor (textbox that recognizes syntax)
+4. Sync/Save file to Google Drive with correct permissions (give access to correct collaborator)
+#### From Google's side
+1. Handle Authentication
+    1. Login
+    2. Registration
+    3. Account Reset
+2. Handle Sync/Save and Data Transfer
+3. Handle Permissions
+#### Pages we need
+1. Home Page (optional)
+2. Login
+3. Dashboard
+    1. Holds project folders similar to GitHub <user>/project1/../file1
+4. Editor
+5. Logout
+6. Error Page
+
 
 ## Next Steps
 Create Rspec tests
