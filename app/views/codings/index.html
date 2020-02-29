@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %link(rel="stylesheet" href="")
+    %title Co-ding Platform
+    = stylesheet_link_tag 'login'
+    = javascript_include_tag 'login'
+    = csrf_meta_tags
+    <!-- = javascript_include_tag "../../assets/javascripts/login.js" -->
+
+  %body
+    %h1 Connect to your google drive!
+    %button{:id => "authorize_button", :style => "display: none;"} Authorize
+    %button{:id => "signout_button", :style => "display: none;"} Sign Out
+    %pre{:id => "content", :style => "white-space: pre-wrap;"}
+    %script{:async => "", :defer => "", :await => "", :src => "https://apis.google.com/js/api.js",
+      :onload => "this.onload=function(){};handleClientLoad()",
+      onreadystatechange => "if (this.readyState === 'complete') this.onload()"}
