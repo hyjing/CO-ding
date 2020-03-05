@@ -57,3 +57,18 @@ Get Java syntax highlight wile multiple people type
 
 ## Next Steps
 Create Rspec tests
+
+## Update 03/05/2020
+### Pages List
+1. Log in
+2. Dashboard with list of project folders
+3. Project view with all files
+4. File text editor
+5. New project creation page
+6. Edit project page
+Optionally:
+1. File viewer without editing
+2. Error Page
+
+### Iteration 1 Flow Chart
+![It.1 Flowchart](/images/it1_flowchart.png)
