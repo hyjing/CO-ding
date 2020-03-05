@@ -1,0 +1,18 @@
+%h2 Details about #{@code.name}
+
+%ul#details
+  %li
+    Author:
+    = @code.author
+  %li
+    Created on:
+    = @code.create_date.strftime("%B %d, %Y")
+
+%h3 Code:
+
+%p#description= @code.code
+
+
+= link_to 'Edit code', edit_code_path(@code)
+= link_to 'Back to movie list', code_index_path
+= link_to 'Delete', code_path(@code), :method => :delete

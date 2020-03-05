@@ -1,0 +1,14 @@
+%h2 Edit code
+
+= form_tag code_path(@code), :method => :put do
+
+  = label :code, :name, 'Name'
+  = text_field :code, 'name'
+
+  = label :code, :author, 'Author'
+  = text_field :code, 'author'
+
+  = label :code, :code, 'Code'
+  = text_field :code, 'code'
+
+  = submit_tag 'Save Changes'
