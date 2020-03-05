@@ -1,16 +1,19 @@
-Feature: user login and redirect to home page
+Feature: user login
 
   As an user
-  So that I can quickly browse my environments
-  I want to log in to homepage
+  So that I can access my projects
+  I want to log in to Dashboard
 
-Background: 
-  Given the user is in home page
-  And user clicks on login button
-  Then user should be at home page
+Scenario: user has correct credentials
+  
+  Given I'm on login page
+  When I log in with correct credentials
+    And press the "Login" button
+  Then I should see the Dashboard
 
-Scenario:
-  # your steps here
-
-Scenario:
-  # your steps here
+Scenario: user has invalid credentials
+  
+  Given I'm on login page
+  When I log in with incorrect credentials
+    And press the "Login" button
+  Then I should see "Incorrect Credentials"
