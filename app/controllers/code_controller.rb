@@ -43,4 +43,8 @@ class CodeController < ApplicationController
     flash[:notice] = "Code '#{@code.name}' deleted."
     redirect_to code_index_path
   end
+
+  def login
+    #redirect_to code_index_path
+  end
 end

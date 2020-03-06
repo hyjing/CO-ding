@@ -1,6 +1,6 @@
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '193719852661-v7aca77m1a5mmle26rqqi8j7ik83l45l.apps.googleusercontent.com';
-var API_KEY = 'yNyMJ-gbbw2rtpd5sDJlg3co';
+var API_KEY = 'AIzaSyCsTy-JK_5TH8_W4iH0xQsWtd4nY2ujxuA';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
@@ -32,7 +32,7 @@ function initClient() {
     }).then(function () {
         // Listen for sign-in state changes.
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
+        console.log(gapi.auth2.getAuthInstance())
         // Handle the initial sign-in state.
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
