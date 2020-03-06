@@ -1,0 +1,17 @@
+%h1 Create New Fold
+
+= form_tag fold_index_path, :method => :post do
+
+  = label :fold, :fold_name, 'Fold_Name'
+  = text_field :fold, 'fold_name'
+
+  = label :fold, :fold_author, 'Fold_Author'
+  = text_field :fold, 'fold_author'
+
+  = label :fold, :fold_create_date, 'Fold Created On'
+  = date_select :fold, 'fold_create_date'
+
+
+
+
+  = submit_tag 'Save Changes'

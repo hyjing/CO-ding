@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200305184813) do
+ActiveRecord::Schema.define(version: 20200306045913) do
 
   create_table "codes", force: :cascade do |t|
     t.string   "name"
     t.string   "author"
     t.text     "code"
     t.datetime "create_date"
+    t.integer  "parent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "folds", force: :cascade do |t|
+    t.string   "fold_name"
+    t.string   "fold_author"
+    t.datetime "fold_create_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

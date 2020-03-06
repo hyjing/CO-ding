@@ -1,0 +1,20 @@
+-#  This file is app/views/movies/index.html.haml
+%h1 All Folds
+
+%table#folds
+  %thead
+    %tr
+      %th Fold Name
+      %th Fold Author
+      %th Fold Create Date
+      %th files inside
+  %tbody
+    - @folds.each do |fold|
+      %tr
+        %td= fold.fold_name
+        %td= fold.fold_author
+        %td= fold.fold_create_date
+        %td= link_to "More about #{fold.fold_name}", fold_path(fold)
+
+
+= link_to 'Add new fold', new_fold_path

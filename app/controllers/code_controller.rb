@@ -1,6 +1,6 @@
 class CodeController < ApplicationController
   def code_params
-    params.require(:code).permit(:name, :author, :code, :create_date)
+    params.require(:code).permit(:name, :author, :code, :create_date, :parent)
   end
 
   def index
@@ -13,9 +13,9 @@ class CodeController < ApplicationController
 
   def create
     params.require(:code)
-    permitted = params[:code].permit(:name, :author, :code, :create_date)
+    permitted = params[:code].permit(:name, :author, :code, :create_date, :parent)
     @code = Code.create!(permitted)
-    flash[:notice] = "#{@movie.title} was successfully created."
+    flash[:notice] = "#{@code.name} was successfully created."
     redirect_to code_index_path
   end
 
@@ -25,7 +25,7 @@ class CodeController < ApplicationController
 
   def update
      @code = Code.find params[:id]
-     permitted = params[:code].permit(:name, :author, :code, :create_date)
+     permitted = params[:code].permit(:name, :author, :code, :create_date, :parent)
      @code.update_attributes!(permitted)
 
      flash[:notice] = "#{@code.name} was successfully updated."
