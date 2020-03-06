@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'google-api-client', '0.24.3', require: 'google/apis'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
