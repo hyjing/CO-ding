@@ -1,4 +1,4 @@
-%h1 All Codes
+%h1 All Codes In This Fold
 
 %table#codes
   %thead
@@ -15,5 +15,6 @@
         %td= code.create_date
         %td= link_to "More about #{code.name}", code_path(code)
 
-  = link_to 'Add new code', new_code_path
-  = link_to 'Delete', fold_path(@fold), :method => :delete
+  = link_to 'Add new code  ', new_code_path
+  = link_to 'Delete fold   ', fold_path(@fold), :method => :delete
+  = link_to 'Back to fold list  ', fold_index_path

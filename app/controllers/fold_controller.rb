@@ -11,6 +11,7 @@ class FoldController < ApplicationController
     id = params[:id]
     @codes = Code.where(parent: id)
     @fold = Fold.find params[:id]
+    session[:current_fold_id] = @fold.id
   end
 
   def new
@@ -32,7 +33,7 @@ class FoldController < ApplicationController
       code.destroy
     end
     @fold.destroy
-    flash[:notice] = "Code '#{@fold.fold_name}' deleted."
+    flash[:notice] = "Fold '#{@fold.fold_name}' deleted."
     redirect_to fold_index_path
   end
 end

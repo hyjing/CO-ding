@@ -12,11 +12,14 @@ class CodeController < ApplicationController
   end
 
   def create
+
     params.require(:code)
     permitted = params[:code].permit(:name, :author, :code, :create_date, :parent)
     @code = Code.create!(permitted)
+    @code.update_attributes(:parent => session[:current_fold_id])
+    puts @code
     flash[:notice] = "#{@code.name} was successfully created."
-    redirect_to code_index_path
+    redirect_to fold_index_path
   end
 
   def edit
@@ -41,7 +44,7 @@ class CodeController < ApplicationController
     @code = Code.find(params[:id])
     @code.destroy
     flash[:notice] = "Code '#{@code.name}' deleted."
-    redirect_to code_index_path
+    redirect_to fold_index_path
   end
 
   def login
