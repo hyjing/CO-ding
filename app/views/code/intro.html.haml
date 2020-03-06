@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %link(rel="stylesheet" href="")
+    %title Co-ding Platform
+    = stylesheet_link_tag 'login'
+    = csrf_meta_tags
+
+  %body
+    .wrapper
+      .container
+        %h1 Connect to your google drive!
+        / Add buttons to initiate auth sequence and sign out
+        // %button#authorize_button{:onclick='login'} Login
+        = link_to 'Log in!', '/login'

@@ -3,16 +3,10 @@
 %table#codes
   %thead
     %tr
-      %th Code Name
-      %th Author
-      %th Create Date
-      %th More Info
+      %th File name
   %tbody
-    - @codes.each do |code|
+    - @files.each do |file|
       %tr
-        %td= code.name
-        %td= code.author
-        %td= code.create_date
-        %td= link_to "More about #{code.name}", code_path(code)
+        %td= file.title
 
 = link_to 'Add new movie', new_code_path
