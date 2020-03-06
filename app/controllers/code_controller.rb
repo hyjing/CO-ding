@@ -15,6 +15,7 @@ class CodeController < ApplicationController
     params.require(:code)
     permitted = params[:code].permit(:name, :author, :code, :create_date)
     @code = Code.create!(permitted)
+    flash[:notice] = "#{@movie.title} was successfully created."
     redirect_to code_index_path
   end
 
