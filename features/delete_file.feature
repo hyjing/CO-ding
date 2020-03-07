@@ -6,6 +6,8 @@ Feature: delete folder
 
 Scenario: delete file
 
-    Given I am inside a file
+    Given "Test" project folder exists
+        And file "main.java" exists
+        And I am seeing details about "main.java"
     When I click "Delete"
-    Then I should not see the file anymore
+    Then I should not see file "main.java" in the "Test" folder

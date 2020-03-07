@@ -6,18 +6,22 @@ Feature: open file
 
 Scenario: open file
 
-    Given I am inside a folder
-    When I click on a file's "More about"
-    Then I should be able to read the file
+    Given "Test" folder exists
+        And I am inside "Test" folder
+        And File "File1.a" exists
+    When I click on "More about" for "File1.a"
+    Then I should be able to read "File1.a"
 
 Scenario: attempt creating new file
 
-    Given I am inside a folder
+    Given "Test" folder exists
     When I click "Add new code"
     Then I should be able to create a new file
 
 Scenario: return to folder view from file
 
-    Given I am inside a file
+    Given "Test" folder exists
+        And I am inside "Test" folder
+        And File "File1.a" exists
     When I click "Back to fold list"
     Then I should see all folders

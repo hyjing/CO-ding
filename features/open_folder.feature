@@ -7,17 +7,19 @@ Feature: open project folder
 Scenario: open project folder
 
     Given I am in the folder view
-    When I click on a project folder
-    Then I should be in the project folder
+        And "Test" project folder exists
+    When I click on the "Test" project folder
+    Then I should be in the "Test" project folder
 
 Scenario: attempt creating new folder
 
     Given I am in the folder view
     When I click "Add new fold"
-    Then I should be able to create new project folder
+    Then I should be able taken to the creation of a new project folder
 
 Scenario: return to folder view from folder
 
-    Given I am inside a folder
+    Given "Test" project folder exists
+        And I am in "Test" folder
     When I click "Back to fold list"
     Then I should see all folders

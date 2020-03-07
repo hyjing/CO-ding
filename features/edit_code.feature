@@ -6,12 +6,15 @@ Feature: edit code
 
 Scenario: edit file
 
-    Given I am looking at the file
+    Given "Test" project folder exists
+        And file "main.java" exists
     When I click "Edit code"
-    Then I should be able to edit the code
+    Then I should be able taken to the editor
 
 Scenario: save file
 
-    Given I am editing the file
+    Given "Test" project folder exists
+        And file "main.java" exists
+        And I write "Hello World" into file "main.java"
     When I click "Save Changes"
-    Then I should be able to see the saved changes
+    Then I should see "Hello World" in file "main.java"

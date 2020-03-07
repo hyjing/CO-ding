@@ -6,6 +6,6 @@ Feature: delete folder
 
 Scenario: delete folder
 
-    Given I am in the file view
-    When I click delete fold
-    Then I should not see the folder anymore
+    Given "Test" project folder exists
+    When I click "delete fold"
+    Then I should not see the "Test" folder
