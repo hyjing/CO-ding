@@ -115,7 +115,7 @@ end
 
 # open folder
 Given(/^I am in the folder view$/) do
-  
+  page.should have_content("All Folds")
 end
 
 When(/^I click on a project folder$/) do |folder_name|
