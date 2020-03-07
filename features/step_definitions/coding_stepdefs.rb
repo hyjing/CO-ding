@@ -4,36 +4,35 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 
 # delete file
 Given(/^I am inside a file$/) do
-  pending
+  click_link "Delete"
 end
 
-When(/^I click "([^"]*)"$/) do |arg|
-  pending
-end
-
-Then(/^I should not see the file anymore$/) do
-  pending
+Then(/^I should not see the file "(.*)" anymore$/) do |filename|
+  visit '/fold'
+  page.should have_no_content(filename)
 end
 
 # delete folder
 Given(/^I am in the file view$/) do
-  pending
+  page.should have_content("All Codes In This Fold")
 end
 
 When(/^I click delete fold$/) do
-  pending
+  click_link "Delete fold"
 end
 
-Then(/^I should not see the folder anymore$/) do
-  pending
+Then(/^I should not see the folder "(.*)" anymore$/) do |foldname|
+  visit '/fold'
+  page.should have_no_content(filename)
 end
 
 # edit code
 Given(/^I am looking at the file$/) do
-  pending
+  page.should have_content("All Codes In This Fold")
 end
 
 Then(/^I should be able to edit the code$/) do
+  # didn't see edit
   pending
 end
 
@@ -47,77 +46,87 @@ end
 
 # new_file
 Given(/^I am on the create new file page$/) do
-  pending
+  page.should have_content("All Codes In This Fold")
+  click_link "Add new code"
 end
 
 And(/^I enter "([^"]*)" in Name$/) do |arg|
-  pending
+  fill_in("Name", :with => arg)
 end
 
 And(/^I enter "([^"]*)" in Author$/) do |arg|
-  pending
+  fill_in("Author", :with => arg)
 end
 
 And(/^the Creation Date is set to today$/) do
-  pending
+  # default date is today
+  pass
 end
 
 Then(/^the new file should appear$/) do
-  pending
+  click_button("Save Changes")
 end
 
 # new folder
 Given(/^I am on the create new folder page$/) do
-  pending
+  page.should have_content("All Folds")
+  click_link "Add new fold"
 end
 
 And(/^I enter "([^"]*)" in Fold_Name$/) do |arg|
-  pending
+  fill_in("Fold_Name", :with => arg)
 end
 
 And(/^I enter "([^"]*)" in Fold_Author$/) do |arg|
-  pending
+  fill_in("Fold_Author", :with => arg)
+end
+
+And(/^the Creation Date is set to today$/) do
+  # default date is today
+  pass
 end
 
 Then(/^the new folder should appear$/) do
-  pending
+  click_button("Save Changes")
 end
 
 
 # open file
 Given(/^I am inside a folder$/) do
-  pending
+  page.should have_content("All Codes In This Fold")
 end
 
 When(/^I click on a file's "([^"]*)"$/) do |arg|
-  pending
+  click_link "More about " + arg
 end
 
-Then(/^I should be able to read the file$/) do
-  pending
+Then(/^I should be able to read the file$/) do |code|
+  page.should have_content(code)
 end
-
-Then(/^I should be able to create a new file$/) do
-  pending
-end
+# not a functionality
+# Then(/^I should be able to create a new file$/) do
+#   pending
+# end
 
 Then(/^I should see all folders$/) do
-  pending
+  click_link "Back to fold list"
+  page.should have_content("All Folds")
 end
 
 # open folder
 Given(/^I am in the folder view$/) do
-  pending
+  
 end
 
-When(/^I click on a project folder$/) do
-  pending
+When(/^I click on a project folder$/) do |folder_name|
+  click_link "More about " + folder_name
 end
 
 Then(/^I should be in the project folder$/) do
-  pending
+  page.should have_content("All Codes In This Fold")
 end
 
 Then(/^I should be able to create new project folder$/) do
-  pending
+  click_link "Add new code"
+  page.should have_content("Create New Code")
 end
